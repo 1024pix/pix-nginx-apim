@@ -1,6 +1,20 @@
+#
+# Token API
+#
 location /api/token {
-  proxy_pass https://<%= ENV['PIX_API_HOSTNAME'] %>/api/application/token;
+  proxy_pass https://<%= ENV["PIX_API_HOSTNAME"] %>/api/application/token;
 }
-location ~ ^/(pole-emploi|organizations) {
-  proxy_pass https://<%= ENV['PIX_API_HOSTNAME'] %>/api$request_uri;
+
+#
+# Pole Emploi API
+#
+location /pole-emploi {
+  proxy_pass https://<%= ENV["PIX_API_HOSTNAME"] %>/api/pole-emploi;
+}
+
+#
+# LSU API
+#
+location /organizations {
+  proxy_pass https://<%= ENV["PIX_API_HOSTNAME"] %>/api/organizations;
 }
