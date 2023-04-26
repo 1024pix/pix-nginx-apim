@@ -1,6 +1,0 @@
-location /api/token {
-  proxy_pass https://<%= ENV['PIX_API_HOSTNAME'] %>/api/application/token;
-}
-location ~ ^/(pole-emploi|organizations) {
-  proxy_pass https://<%= ENV['PIX_API_HOSTNAME'] %>/api$request_uri;
-}
