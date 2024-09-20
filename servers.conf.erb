@@ -42,19 +42,26 @@ server {
   location /api/token {
     proxy_pass https://<%= ENV["PIX_API_HOSTNAME"] %>/api/application/token;
   }
-  
+
   #
   # Pole Emploi API
   #
   location /pole-emploi {
     proxy_pass https://<%= ENV["PIX_API_HOSTNAME"] %>/api/pole-emploi;
   }
-  
+
   #
   # LSU API
   #
   location /organizations {
     proxy_pass https://<%= ENV["PIX_API_HOSTNAME"] %>/api/organizations;
+  }
+
+  #
+  # Healthcheck
+  #
+  location /healthcheck {
+    proxy_pass https://<%= ENV["PIX_API_HOSTNAME"] %>/api/healthcheck/db;
   }
 
   add_header X-Content-Type-Options "nosniff";
