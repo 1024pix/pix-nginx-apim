@@ -1,4 +1,4 @@
-# Pix Gravitee APIM deployment
+# Pix nginx-based APIM
 
 Ce dépot contient le code poussé sur Scalingo pour déployer l'instance APIM de Pix.
 
