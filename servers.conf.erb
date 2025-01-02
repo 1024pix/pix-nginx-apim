@@ -64,6 +64,13 @@ server {
     proxy_pass https://<%= ENV["PIX_API_HOSTNAME"] %>/api/healthcheck/db;
   }
 
+  #
+  # Parcoursup
+  #
+  location /parcoursup/ {
+    proxy_pass https://<%= ENV["PIX_API_HOSTNAME"] %>/api/parcoursup/;
+  }
+
   add_header X-Content-Type-Options "nosniff";
   add_header X-Frame-Options "SAMEORIGIN";
   add_header X-XSS-Protection 1;
