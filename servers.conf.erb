@@ -72,6 +72,9 @@ server {
   #
   # Parcoursup
   #
+  location /parcoursup/documentation {
+    proxy_pass https://<%= ENV["PIX_API_HOSTNAME"] %>/parcoursup/documentation;
+  }
   location /parcoursup/ {
     proxy_pass https://<%= ENV["PIX_API_HOSTNAME"] %>/api/parcoursup/;
   }
