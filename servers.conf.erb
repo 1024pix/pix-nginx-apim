@@ -39,7 +39,12 @@ server {
   #
   # Token API
   #
+  location /token {
+    proxy_pass https://<%= ENV["PIX_API_HOSTNAME"] %>/api/application/token;
+  }
+  # Deprecated route
   location /api/token {
+    proxy_set_header Deprecation "@1736788266"; # 2025-01-13T17:11:06.000Z
     proxy_pass https://<%= ENV["PIX_API_HOSTNAME"] %>/api/application/token;
   }
 
